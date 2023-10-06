@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 
 	"github.com/jung-kurt/gofpdf"
 )
 
 func main() {
-	text, err := ioutil.ReadFile("lorem.txt")
+	text, err := os.ReadFile("lorem.txt")
 	pdf := gofpdf.New("P", "mm", "A4", "")
 	pdf.AddPage()
 	pdf.SetFont("Arial", "B", 16)
